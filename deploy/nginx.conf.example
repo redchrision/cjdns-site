@@ -1,0 +1,36 @@
+# nginx server block for the CJDNS SASU site (static build in /var/www/cjdns-site).
+# TLS via certbot/Let's Encrypt assumed; HSTS enabled only once HTTPS is confirmed working.
+server {
+    listen 443 ssl http2;
+    server_name cjdns.fr www.cjdns.fr;
+
+    root /var/www/cjdns-site;
+    index index.html;
+
+    # SPA fallback for deep links
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Long cache for hashed assets, none for HTML
+    location /assets/ {
+        add_header Cache-Control "public, max-age=31536000, immutable";
+    }
+    location = /index.html {
+        add_header Cache-Control "no-cache";
+    }
+
+    # Security headers — CSP is strict because the site makes zero external requests
+    add_header Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header X-Frame-Options "DENY" always;
+    add_header Permissions-Policy "camera=(), microphone=(), geolocation=()" always;
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+}
+
+server {
+    listen 80;
+    server_name cjdns.fr www.cjdns.fr;
+    return 301 https://$host$request_uri;
+}
