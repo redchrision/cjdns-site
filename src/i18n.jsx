@@ -5,15 +5,15 @@ const translations = {
     nav: {
       skip: 'Skip to content',
       menu: 'Menu',
-      consulting: 'Consultancy',
+      consulting: 'Consulting',
       research: 'Research partnerships',
       credentials: 'R&D credentials',
       contact: 'Contact',
     },
     meta: {
       home: {
-        title: 'CJDNS SASU — R&D consultancy & research engineering',
-        desc: 'Independent R&D consultancy in the Paris area, active in Normandy, working worldwide. Networking, cryptography, Linux kernel, applied AI — and research partnerships under FP7, Horizon 2020 and Horizon Europe. CIR-eligible R&D.',
+        title: 'CJDNS SASU — Consulting & Research',
+        desc: 'Independent consulting and research.',
       },
       legal: {
         title: 'Legal notice — CJDNS SASU',
@@ -25,48 +25,81 @@ const translations = {
       },
     },
     hero: {
-      eyebrow: 'Consultancy & research partnerships — Paris · Normandy · Worldwide',
-      title: 'Engineering, research, and everything between.',
-      lead: 'CJDNS is an independent R&D and consultancy company. Businesses bring us technical questions; research consortia bring us projects to validate, integrate and deliver. Either way, you talk directly to the senior engineers doing the work.',
-      ctaConsulting: 'Consultancy',
-      ctaResearch: 'Research partnerships',
-      badges: ['Open source at heart', 'FP7 · Horizon 2020 · Horizon Europe', 'CIR-eligible R&D'],
+      eyebrow: 'Consulting & research partnerships',
+      title: 'Confidence through comprehension.',
+      lead: 'CJDNS is an independent R&D and consulting company. We translate technical uncertainty into decision-quality information.',
+      ctaConsulting: 'Consulting',
+      ctaResearch: 'Publicly funded research',
+      badges: ['FP7', 'Horizon 2020', 'Horizon Europe', 'CIR-eligible R&D'],
     },
     consulting: {
-      eyebrow: 'Consultancy',
-      title: 'Bring us the problem.',
-      lead: 'Some business problems have a hard technical core. We give advice you can act on — or build the solution ourselves. The areas where we go deep:',
+      eyebrow: 'Consulting',
+      title: 'Achieve clarity.',
+      lead: 'Our consultancy brings decades of industry experience to help you navigate the subtle realities that aren\'t captured in documentation, ' +
+        'best practices, or the training data behind today\'s AI tools. ' +
+        'We understand the value of time, and know how to communicate complex technical issues directly to C-suite executives, boards, investors, ' +
+        'and engineering teams. We embed with development teams and project managers to guide architecture and reduce risk around critical path milestones.',
       areas: [
-        'Networking',
-        'Cryptography',
+        // When building something that has never been built before, a critical early objective is to establish that a product meeting its requirements can be delivered within the available time and budget.
+        // Many challenges have multiple possible approaches, making the engineering effort, schedule, and cost of reaching a proof of concept difficult to estimate accurately.
+        // We frequently work on projects with uncertain feasibility.
+        // Our approach integrates feasibility activities into the overall project plan, resequencing work to retire the highest risks as early as practical.
+        'Feasibility',
+
+        // Software architecture is critical to both efficient delivery and long-term maintainability.
+        // We work with project managers and senior developers to define architectures and engineering processes
+        // that reduce technical risk while balancing initial investment against long-term maintainability.
+        'Software architecture',
+
+        // Wherever software systems communicate, protocols are needed.
+        // Whether in inter-process communication, distributed systems, client-server architectures, federation, or peer-to-peer networks, the fundamental design considerations remain largely the same.
+        // Good protocols balance security, efficiency, simplicity, and long-term interoperability.
+        // We have extensive protocol design experience, beginning with the open-source peer-to-peer routing protocol that is our namesake.
+        'Protocol design',
+
+        // Information security is often burdened by superstition, folklore, and checkbox-driven thinking. In reality, effective security is simply another application of rigorous risk analysis.
+        // The appropriate risk model for most information security analyses is similar to that of physical security. It considers threat actor profiles, attacker capabilities and resources, attacker incentives, potential impact on the defender, and the relevant attack surface.
+        // AI has recently begun providing powerful new analysis tools to attackers and defenders alike. But even this rapidly evolving ecosystem can still be modeled and reasoned about.
         'Information security',
-        'Open-source ecosystems',
-        'Proof-of-work & cryptocurrency',
-        'Smart contracts',
-        'Linux kernel development',
+
+        // It's not enough to know what an asset is today.
+        // You need to know how that asset performs across the range of credible future scenarios.
+        // Just as your legal team identifies risks and obligations in contracts, we identify risks and opportunities in technology assets.
+        'Technical due diligence',
+
+        // Our clients are typically decision makers who already think in terms of risk and opportunity, so we often find these concepts provide a good common language between us.
+        // For clients who want additional structure, we go further into practical decision modeling and probabilistic forecasts.
+        // The level of formalization is always adapted to the goal. When helping decision makers become familiar with the landscape of credible outcomes, we don't present a formal model; instead, we draw a map.
+        'Risk analysis',
+
+        // Open source ecosystem management is a special case of brand development. While we are not specialists in branding, we do have extensive experience in building and interfacing with open source ecosystems.
+        // Even for companies which genuinely share open source values, good planning is still necessary to avoid being forced into business decisions that damage long-term credibility.
+        // Companies which succeed in open source ecosystems are those that are able to reliably maintain transparency, candor, and predictable behavior.
+        // Open source ecosystems are even tolerant of profit-focused companies, as long as they are able to set expectations and keep their word.
+        'Open source ecosystems',
+
+        // One of the fastest-growing opportunities for value creation today is the application of modern AI technologies.
+        // We do not specialize in fundamental AI research.
+        // We adapt existing base models using fine-tuning, prompt design, and system integration to meet project requirements.
         'Applied AI',
       ],
-      pitch: 'The first conversation takes fifteen minutes and costs nothing. Bring the problem — we will tell you honestly whether we are the right people to solve it.',
+      pitch: 'Book a confidential 15-minute call to discuss your objectives and whether we\'re the right fit.',
       book: 'Book a 15-minute call',
       orWrite: 'or write to',
-      bookMailSubject: '15-minute intro call',
+      bookMailSubject: '15-minute introductory call',
     },
     research: {
-      eyebrow: 'Research partnerships',
-      title: 'We make funded research projects hold together.',
+      eyebrow: 'Publicly funded research partnerships',
+      title: 'A research partner that talks theory and practice.',
       lead: 'Over ten years of experience managing French and European publicly funded research — FP7, Horizon 2020, Horizon Europe. We support consortia through the whole cycle, from the grant application to the final deliverable.',
       items: [
         {
           name: 'Architecture & feasibility validation',
-          text: 'Research consortia assemble specialists, and someone has to make the pieces fit. Before the work begins, we validate that a proposed architecture can actually be built — on paper first, so the surprises don’t arrive at month eighteen.',
+          text: 'Research consortia assemble field specialists, but it\'s important to make sure the pieces fit. Before the work begins, we provide advice on architecture, exploitation feasibility, and risks to help projects start off on the right foot.',
         },
         {
           name: 'Integration of deliverable components',
-          text: 'During the project, we build the glue: the integration layer that turns components developed by separate specialist teams into one working, demonstrable system.',
-        },
-        {
-          name: 'Grant application support',
-          text: 'From framing a fundable work programme to writing the application itself — we have been on the practitioner side of French and European funding processes for a decade.',
+          text: 'During the project, we provide specific expertise in the integration of results and the research-to-industrial pipeline: We have experience producing demos, proof of concept, MVP, software products, and open source projects.',
         },
       ],
       selectedTitle: 'Selected projects',
@@ -86,7 +119,7 @@ const translations = {
           linkLabel: 'Project wiki',
         },
       ],
-      pitch: 'Preparing a proposal, or holding a work package that needs senior integration hands? Fifteen minutes is enough to find out if we fit.',
+      pitch: 'If you\'re looking for the partner with integration, industrialization, and delivery expertise, send us an email about your project.',
     },
     credentials: {
       eyebrow: 'R&D credentials',
@@ -109,14 +142,14 @@ const translations = {
     contact: {
       eyebrow: 'Contact',
       title: 'Write to us.',
-      text: 'One address, read directly by engineers — no ticket system, no waiting room. A project you want to discuss, a proposal taking shape, or simply a question you would like an honest opinion on: write to us. We answer every serious message, in English or French.',
+      text: 'Tell us the problem and we\'ll take it from there',
       copy: 'Copy address',
       copied: 'Copied ✓',
-      email: 'info@cjdns.fr',
-      preferCall: 'Prefer to talk? Book a 15-minute call →',
+      email: 'hello@cjdns.fr',
+      preferCall: 'Ready to launch your consulting mission? Book a confidential 15-minute call →',
     },
     footer: {
-      legal: 'CJDNS SASU — R&D software engineering & consultancy',
+      legal: 'CJDNS SASU — Consulting and research',
       rights: 'SIREN 843 264 235 — Registered in France.',
       legalLink: 'Legal notice & privacy',
       noTracking: 'Private by design — this site runs without cookies or trackers.',
@@ -131,7 +164,7 @@ const translations = {
             'CJDNS — société par actions simplifiée unipersonnelle (SASU) with a capital of €50, registered with the Nanterre Trade and Companies Register under SIREN 843 264 235.',
             'Registered office: 32 rue de Paris, 92100 Boulogne-Billancourt, France.',
             'Publication director: Caleb James DeLisle, President.',
-            'Contact: info@cjdns.fr',
+            'Contact: hello@cjdns.fr',
           ],
         },
         {
@@ -144,7 +177,7 @@ const translations = {
           h: 'Privacy',
           body: [
             'This website sets no cookies and uses no trackers or third-party analytics. Fonts are served from our own host; no visitor data is transmitted to third parties by this site.',
-            'If you write to info@cjdns.fr, your message and address are used solely to answer you. You may request access to, correction of, or deletion of your data at the same address, and you may lodge a complaint with the CNIL (www.cnil.fr).',
+            'If you write to hello@cjdns.fr, your message and address are used solely to answer you. You may request access to, correction of, or deletion of your data at the same address, and you may lodge a complaint with the CNIL (www.cnil.fr).',
           ],
         },
         {
@@ -275,7 +308,7 @@ const translations = {
       copy: 'Copier l’adresse',
       copied: 'Copié ✓',
       preferCall: 'Vous préférez en parler ? Réservez un appel de 15 minutes →',
-      email: 'info@cjdns.fr',
+      email: 'hello@cjdns.fr',
     },
     footer: {
       legal: 'CJDNS SASU — Ingénierie logicielle R&D & conseil',
@@ -293,7 +326,7 @@ const translations = {
             'CJDNS — société par actions simplifiée unipersonnelle (SASU) au capital de 50 €, immatriculée au RCS de Nanterre sous le SIREN 843 264 235.',
             'Siège social : 32 rue de Paris, 92100 Boulogne-Billancourt, France.',
             'Directeur de la publication : Caleb James DeLisle, Président.',
-            'Contact : info@cjdns.fr',
+            'Contact : hello@cjdns.fr',
           ],
         },
         {
@@ -306,7 +339,7 @@ const translations = {
           h: 'Confidentialité',
           body: [
             'Ce site ne dépose aucun cookie et n’utilise ni traceur ni outil d’analyse tiers. Les polices sont servies depuis notre propre hébergement ; aucune donnée de visite n’est transmise à des tiers par ce site.',
-            'Si vous écrivez à info@cjdns.fr, votre message et votre adresse ne sont utilisés que pour vous répondre. Vous pouvez demander l’accès, la rectification ou la suppression de vos données à cette même adresse, et introduire une réclamation auprès de la CNIL (www.cnil.fr).',
+            'Si vous écrivez à hello@cjdns.fr, votre message et votre adresse ne sont utilisés que pour vous répondre. Vous pouvez demander l’accès, la rectification ou la suppression de vos données à cette même adresse, et introduire une réclamation auprès de la CNIL (www.cnil.fr).',
           ],
         },
         {
