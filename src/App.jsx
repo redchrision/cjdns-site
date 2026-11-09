@@ -104,14 +104,25 @@ function Footer() {
   const { t } = useLang();
   return (
     <footer className="footer">
-      <p>{t.footer.legal}</p>
-      <p className="footer-muted">
-        © {new Date().getFullYear()} — {t.footer.rights} ·{' '}
-        <Link className="footer-link" to="/mentions-legales">
-          {t.footer.legalLink}
-        </Link>
-      </p>
-      <p className="footer-muted footer-notrack">{t.footer.noTracking}</p>
+      <div className="footer-inner">
+        <div className="footer-col">
+          <p className="footer-brand">
+            <Logo size={22} />
+            <span>{t.footer.legal}</span>
+          </p>
+          <p className="footer-muted">
+            © {new Date().getFullYear()} — {t.footer.rights}
+          </p>
+        </div>
+        <div className="footer-col footer-col-end">
+          <p>
+            <Link className="footer-link" to="/mentions-legales">
+              {t.footer.legalLink}
+            </Link>
+          </p>
+          <p className="footer-muted footer-notrack">{t.footer.noTracking}</p>
+        </div>
+      </div>
     </footer>
   );
 }
