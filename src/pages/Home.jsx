@@ -64,9 +64,8 @@ function Consulting() {
           <h2>{c.title}</h2>
         </div>
         <ul className="value-points">
-          {c.points.map((pt, i) => (
+          {c.points.map((pt) => (
             <li key={pt.label}>
-              <span className="value-index">{String(i + 1).padStart(2, '0')}</span>
               <h3>{pt.label}</h3>
               <p>{pt.text}</p>
             </li>

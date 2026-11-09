@@ -809,15 +809,6 @@ a {
   padding-top: 1.2rem;
 }
 
-.value-index {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  letter-spacing: 0.12em;
-  color: var(--route-deep);
-  margin-bottom: 0.5rem;
-}
-
 .value-points h3 {
   font-size: 1.2rem;
   margin-bottom: 0.55rem;
