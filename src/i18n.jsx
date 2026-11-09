@@ -158,6 +158,9 @@ const translations = {
         },
       ],
       pitch: 'If you\'re looking for the partner with integration, industrialization, and delivery expertise, send us an email about your project.',
+      emailCta: 'Email us about your project',
+      orBook: 'or book a 15-minute call',
+      mailSubject: 'Research partnership',
     },
     credentials: {
       eyebrow: 'R&D credentials',
@@ -184,7 +187,7 @@ const translations = {
       copy: 'Copy address',
       copied: 'Copied ✓',
       email: 'hello@cjdns.fr',
-      preferCall: 'Ready to launch your consulting mission? Book a confidential 15-minute call →',
+      callPrompt: 'Ready to launch your consulting mission?',
     },
     footer: {
       legal: 'CJDNS SASU — Consulting and research',
@@ -390,6 +393,9 @@ const translations = {
         },
       ],
       pitch: 'Vous cherchez un partenaire doté d’une expertise en intégration, en industrialisation et en livraison ? Écrivez-nous au sujet de votre projet.',
+      emailCta: 'Écrivez-nous au sujet de votre projet',
+      orBook: 'ou réservez un appel de 15 minutes',
+      mailSubject: 'Partenariat de recherche',
     },
     credentials: {
       eyebrow: 'Agréments R&D',
@@ -415,7 +421,7 @@ const translations = {
       text: 'Exposez-nous le problème, nous nous occupons du reste.',
       copy: 'Copier l’adresse',
       copied: 'Copié ✓',
-      preferCall: 'Prêt à lancer votre mission de conseil ? Réservez un appel confidentiel de 15 minutes →',
+      callPrompt: 'Prêt à lancer votre mission de conseil ?',
       email: 'hello@cjdns.fr',
     },
     footer: {

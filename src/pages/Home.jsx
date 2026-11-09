@@ -25,6 +25,18 @@ function BookCallButton({ className = 'btn btn-primary' }) {
   );
 }
 
+function CtaBand({ dark = false, text, action, alt }) {
+  return (
+    <div className={`cta-band${dark ? ' cta-band-dark' : ''}`}>
+      <p className="cta-band-text">{text}</p>
+      <div className="cta-band-actions">
+        {action}
+        <span className="cta-band-alt">{alt}</span>
+      </div>
+    </div>
+  );
+}
+
 function Hero() {
   const { t } = useLang();
   return (
@@ -77,16 +89,15 @@ function Consulting() {
           prevLabel={c.prev || '←'}
           nextLabel={c.next || '→'}
         />
-        <div className="consulting-cta">
-          <p className="pitch-line">{c.pitch}</p>
-          <div className="pitch-actions">
-            <BookCallButton />
-            <span className="pitch-or">
-              {c.orWrite}{' '}
-              <a href={`mailto:${t.contact.email}`}>{t.contact.email}</a>
-            </span>
-          </div>
-        </div>
+        <CtaBand
+          text={c.pitch}
+          action={<BookCallButton />}
+          alt={
+            <>
+              {c.orWrite} <a href={`mailto:${t.contact.email}`}>{t.contact.email}</a>
+            </>
+          }
+        />
       </div>
     </section>
   );
@@ -95,6 +106,10 @@ function Consulting() {
 function Research() {
   const { t } = useLang();
   const r = t.research;
+  const callHref =
+    BOOKING_URL ||
+    `mailto:${t.contact.email}?subject=${encodeURIComponent(t.consulting.bookMailSubject)}`;
+  const callProps = BOOKING_URL ? { target: '_blank', rel: 'noreferrer' } : {};
   return (
     <section className="section section-dark section-pitch" id="research">
       <div className="section-inner">
@@ -137,14 +152,23 @@ function Research() {
           })}
         </div>
 
-        <p className="pitch-line pitch-line-dark">{r.pitch}</p>
-        <div className="pitch-actions">
-          <BookCallButton />
-          <span className="pitch-or pitch-or-dark">
-            {t.consulting.orWrite}{' '}
-            <a href={`mailto:${t.contact.email}`}>{t.contact.email}</a>
-          </span>
-        </div>
+        <CtaBand
+          dark
+          text={r.pitch}
+          action={
+            <a
+              className="btn btn-primary"
+              href={`mailto:${t.contact.email}?subject=${encodeURIComponent(r.mailSubject)}`}
+            >
+              {r.emailCta}
+            </a>
+          }
+          alt={
+            <a href={callHref} {...callProps}>
+              {r.orBook}
+            </a>
+          }
+        />
       </div>
     </section>
   );
@@ -204,11 +228,12 @@ function Contact() {
             {copied ? t.contact.copied : t.contact.copy}
           </button>
         </div>
-        <p className="contact-call">
-          <a className="contact-call-link" href={callHref} {...callProps}>
-            {t.contact.preferCall}
+        <div className="contact-call">
+          <span className="contact-call-prompt">{t.contact.callPrompt}</span>
+          <a className="btn btn-ghost" href={callHref} {...callProps}>
+            {t.consulting.book}
           </a>
-        </p>
+        </div>
         <p className="contact-location">{t.contact.location}</p>
       </div>
     </section>
