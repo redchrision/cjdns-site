@@ -35,10 +35,20 @@ const translations = {
     consulting: {
       eyebrow: 'Consulting',
       title: 'Achieve clarity.',
-      lead: 'Our consultancy brings decades of industry experience to help you navigate the subtle realities that aren\'t captured in documentation, ' +
-        'best practices, or the training data behind today\'s AI tools. ' +
-        'We understand the value of time, and know how to communicate complex technical issues directly to C-suite executives, boards, investors, ' +
-        'and engineering teams. We embed with development teams and project managers to guide architecture and reduce risk around critical path milestones.',
+      points: [
+        {
+          label: 'Beyond the documentation',
+          text: 'Our consultancy brings decades of industry experience to help you navigate the subtle realities that aren\'t captured in documentation, best practices, or the training data behind today\'s AI tools.',
+        },
+        {
+          label: 'Straight to decision-makers',
+          text: 'We understand the value of time, and know how to communicate complex technical issues directly to C-suite executives, boards, investors, and engineering teams.',
+        },
+        {
+          label: 'Embedded with your team',
+          text: 'We embed with development teams and project managers to guide architecture and reduce risk around critical path milestones.',
+        },
+      ],
       areas: [
         {
           name: "Feasibility",
@@ -258,7 +268,20 @@ const translations = {
     consulting: {
       eyebrow: 'Conseil',
       title: 'Gagnez en clarté.',
-      lead: 'Notre activité de conseil met des décennies d’expérience industrielle à votre service, pour vous aider à naviguer dans les réalités subtiles que l’on ne trouve ni dans la documentation, ni dans les bonnes pratiques, ni dans les données d’entraînement des outils d’IA actuels. Nous connaissons la valeur du temps, et nous savons exposer des questions techniques complexes directement aux dirigeants, aux conseils d’administration, aux investisseurs et aux équipes d’ingénierie. Nous nous intégrons aux équipes de développement et aux chefs de projet pour orienter l’architecture et réduire les risques autour des jalons du chemin critique.',
+      points: [
+        {
+          label: 'Au-delà de la documentation',
+          text: 'Notre activité de conseil met des décennies d’expérience industrielle à votre service, pour vous aider à naviguer dans les réalités subtiles que l’on ne trouve ni dans la documentation, ni dans les bonnes pratiques, ni dans les données d’entraînement des outils d’IA actuels.',
+        },
+        {
+          label: 'Directement aux décideurs',
+          text: 'Nous connaissons la valeur du temps, et nous savons exposer des questions techniques complexes directement aux dirigeants, aux conseils d’administration, aux investisseurs et aux équipes d’ingénierie.',
+        },
+        {
+          label: 'Au sein de votre équipe',
+          text: 'Nous nous intégrons aux équipes de développement et aux chefs de projet pour orienter l’architecture et réduire les risques autour des jalons du chemin critique.',
+        },
+      ],
       areas: [
         {
           name: 'Faisabilité',

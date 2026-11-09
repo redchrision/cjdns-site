@@ -792,28 +792,44 @@ a {
 }
 
 /* ---- consulting: route-map explorer ---- */
-.consulting-head {
-  display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  gap: 1rem 3.5rem;
-  align-items: end;
-  margin-bottom: 3rem;
-}
+.consulting-head { margin-bottom: 2.4rem; }
 .consulting-head h2 { margin-bottom: 0; }
-.consulting-lead { margin-bottom: 0; max-width: 62ch; }
 
-.consulting-cta {
-  margin-top: 3rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem 2.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--line);
+.value-points {
+  list-style: none;
+  margin: 0 0 3.6rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.4rem;
 }
-.consulting-cta .pitch-line { margin: 0; max-width: 48ch; }
-.consulting-cta .pitch-actions { margin: 0; }
+
+.value-points li {
+  border-top: 2px solid var(--route-deep);
+  padding-top: 1.2rem;
+}
+
+.value-index {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  color: var(--route-deep);
+  margin-bottom: 0.5rem;
+}
+
+.value-points h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.55rem;
+}
+
+.value-points p {
+  color: var(--slate);
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+.consulting-cta { margin-top: 3.4rem; }
 
 .ax-desktop {
   display: grid;
@@ -928,7 +944,6 @@ a {
   color: var(--chalk);
   border-radius: 16px;
   padding: clamp(2rem, 4vw, 3.2rem);
-  min-height: 430px;
   overflow: hidden;
   box-shadow: 0 40px 70px -40px rgba(12, 27, 42, 0.55);
 }
@@ -951,9 +966,19 @@ a {
   pointer-events: none;
 }
 
-.ax-panel {
-  position: relative;
+.ax-panels {
+  display: grid;
   flex: 1;
+}
+
+.ax-panel {
+  grid-area: 1 / 1;
+  position: relative;
+  visibility: hidden;
+}
+
+.ax-panel.is-active {
+  visibility: visible;
   animation: ax-in 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -963,7 +988,7 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ax-panel { animation: none; }
+  .ax-panel.is-active { animation: none; }
   .ax-rail-lit, .ax-node, .ax-stop-name { transition: none; }
 }
 
@@ -1061,7 +1086,7 @@ a {
 .ax-card .ax-lede { font-size: 1.05rem; }
 
 @media (max-width: 900px) {
-  .consulting-head { grid-template-columns: 1fr; margin-bottom: 2rem; }
+  .value-points { grid-template-columns: 1fr; gap: 1.6rem; margin-bottom: 2.6rem; }
   .ax-desktop { display: none; }
   .ax-mobile { display: block; }
 }

@@ -11,14 +11,14 @@ import { useRef, useState } from 'react';
 const norm = (a) => (typeof a === 'string' ? { name: a, lede: '', body: [] } : a);
 const pad = (n) => String(n).padStart(2, '0');
 
-function Panel({ area, index, total, id, labelledBy }) {
+function Panel({ area, index, total, active, id, labelledBy }) {
   return (
     <div
-      className="ax-panel"
+      className={`ax-panel${active ? ' is-active' : ''}`}
       role="tabpanel"
       id={id}
       aria-labelledby={labelledBy}
-      key={index}
+      aria-hidden={!active}
     >
       <div className="ax-panel-head">
         <span className="ax-count">
@@ -82,7 +82,7 @@ export default function AreaExplorer({ areas, label, prevLabel, nextLabel }) {
               role="tab"
               id={`ax-tab-${i}`}
               aria-selected={i === active}
-              aria-controls="ax-panel"
+              aria-controls={`ax-panel-${i}`}
               tabIndex={i === active ? 0 : -1}
               className={`ax-stop${i === active ? ' is-active' : ''}${i < active ? ' is-passed' : ''}`}
               onClick={() => go(i)}
@@ -107,13 +107,19 @@ export default function AreaExplorer({ areas, label, prevLabel, nextLabel }) {
               )}
             </g>
           </svg>
-          <Panel
-            area={items[active]}
-            index={active}
-            total={total}
-            id="ax-panel"
-            labelledBy={`ax-tab-${active}`}
-          />
+          <div className="ax-panels">
+            {items.map((a, i) => (
+              <Panel
+                key={a.name}
+                area={a}
+                index={i}
+                total={total}
+                active={i === active}
+                id={`ax-panel-${i}`}
+                labelledBy={`ax-tab-${i}`}
+              />
+            ))}
+          </div>
           <div className="ax-nav">
             <button className="ax-arrow" onClick={() => go(active - 1)} aria-label={prevLabel}>
               ←

@@ -60,12 +60,18 @@ function Consulting() {
       <NodeMotif className="motif-top-right" />
       <div className="section-inner">
         <div className="consulting-head">
-          <div>
-            <p className="eyebrow">{c.eyebrow}</p>
-            <h2>{c.title}</h2>
-          </div>
-          <p className="section-lead consulting-lead">{c.lead}</p>
+          <p className="eyebrow">{c.eyebrow}</p>
+          <h2>{c.title}</h2>
         </div>
+        <ul className="value-points">
+          {c.points.map((pt, i) => (
+            <li key={pt.label}>
+              <span className="value-index">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{pt.label}</h3>
+              <p>{pt.text}</p>
+            </li>
+          ))}
+        </ul>
         <AreaExplorer
           areas={c.areas}
           label={c.exploreLabel || c.eyebrow}
@@ -75,7 +81,7 @@ function Consulting() {
         <div className="consulting-cta">
           <p className="pitch-line">{c.pitch}</p>
           <div className="pitch-actions">
-            <BookCallButton className="btn btn-dark" />
+            <BookCallButton />
             <span className="pitch-or">
               {c.orWrite}{' '}
               <a href={`mailto:${t.contact.email}`}>{t.contact.email}</a>
