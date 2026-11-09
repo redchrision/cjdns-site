@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useLang } from '../i18n.jsx';
 import MeshCanvas from '../components/MeshCanvas.jsx';
 import NodeMotif from '../components/NodeMotif.jsx';
+import AreaExplorer from '../components/AreaExplorer.jsx';
 import useMeta from '../useMeta.js';
 import { BOOKING_URL, LEDGER_URL, ECONET_WIKI_URL } from '../config.js';
 
@@ -57,11 +58,21 @@ function Consulting() {
   return (
     <section className="section section-motif section-pitch" id="consulting">
       <NodeMotif className="motif-top-right" />
-      <div className="section-inner consulting-layout">
-        <div className="consulting-intro">
-          <p className="eyebrow">{c.eyebrow}</p>
-          <h2>{c.title}</h2>
-          <p className="section-lead">{c.lead}</p>
+      <div className="section-inner">
+        <div className="consulting-head">
+          <div>
+            <p className="eyebrow">{c.eyebrow}</p>
+            <h2>{c.title}</h2>
+          </div>
+          <p className="section-lead consulting-lead">{c.lead}</p>
+        </div>
+        <AreaExplorer
+          areas={c.areas}
+          label={c.exploreLabel || c.eyebrow}
+          prevLabel={c.prev || '←'}
+          nextLabel={c.next || '→'}
+        />
+        <div className="consulting-cta">
           <p className="pitch-line">{c.pitch}</p>
           <div className="pitch-actions">
             <BookCallButton className="btn btn-dark" />
@@ -71,14 +82,6 @@ function Consulting() {
             </span>
           </div>
         </div>
-        <ol className="area-list">
-          {c.areas.map((a, i) => (
-            <li key={a}>
-              <span className="area-index">{String(i + 1).padStart(2, '0')}</span>
-              <span className="area-name">{a}</span>
-            </li>
-          ))}
-        </ol>
       </div>
     </section>
   );

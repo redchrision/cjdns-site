@@ -40,49 +40,77 @@ const translations = {
         'We understand the value of time, and know how to communicate complex technical issues directly to C-suite executives, boards, investors, ' +
         'and engineering teams. We embed with development teams and project managers to guide architecture and reduce risk around critical path milestones.',
       areas: [
-        // When building something that has never been built before, a critical early objective is to establish that a product meeting its requirements can be delivered within the available time and budget.
-        // Many challenges have multiple possible approaches, making the engineering effort, schedule, and cost of reaching a proof of concept difficult to estimate accurately.
-        // We frequently work on projects with uncertain feasibility.
-        // Our approach integrates feasibility activities into the overall project plan, resequencing work to retire the highest risks as early as practical.
-        'Feasibility',
-
-        // Software architecture is critical to both efficient delivery and long-term maintainability.
-        // We work with project managers and senior developers to define architectures and engineering processes
-        // that reduce technical risk while balancing initial investment against long-term maintainability.
-        'Software architecture',
-
-        // Wherever software systems communicate, protocols are needed.
-        // Whether in inter-process communication, distributed systems, client-server architectures, federation, or peer-to-peer networks, the fundamental design considerations remain largely the same.
-        // Good protocols balance security, efficiency, simplicity, and long-term interoperability.
-        // We have extensive protocol design experience, beginning with the open-source peer-to-peer routing protocol that is our namesake.
-        'Protocol design',
-
-        // Information security is often burdened by superstition, folklore, and checkbox-driven thinking. In reality, effective security is simply another application of rigorous risk analysis.
-        // The appropriate risk model for most information security analyses is similar to that of physical security. It considers threat actor profiles, attacker capabilities and resources, attacker incentives, potential impact on the defender, and the relevant attack surface.
-        // AI has recently begun providing powerful new analysis tools to attackers and defenders alike. But even this rapidly evolving ecosystem can still be modeled and reasoned about.
-        'Information security',
-
-        // It's not enough to know what an asset is today.
-        // You need to know how that asset performs across the range of credible future scenarios.
-        // Just as your legal team identifies risks and obligations in contracts, we identify risks and opportunities in technology assets.
-        'Technical due diligence',
-
-        // Our clients are typically decision makers who already think in terms of risk and opportunity, so we often find these concepts provide a good common language between us.
-        // For clients who want additional structure, we go further into practical decision modeling and probabilistic forecasts.
-        // The level of formalization is always adapted to the goal. When helping decision makers become familiar with the landscape of credible outcomes, we don't present a formal model; instead, we draw a map.
-        'Risk analysis',
-
-        // Open source ecosystem management is a special case of brand development. While we are not specialists in branding, we do have extensive experience in building and interfacing with open source ecosystems.
-        // Even for companies which genuinely share open source values, good planning is still necessary to avoid being forced into business decisions that damage long-term credibility.
-        // Companies which succeed in open source ecosystems are those that are able to reliably maintain transparency, candor, and predictable behavior.
-        // Open source ecosystems are even tolerant of profit-focused companies, as long as they are able to set expectations and keep their word.
-        'Open source ecosystems',
-
-        // One of the fastest-growing opportunities for value creation today is the application of modern AI technologies.
-        // We do not specialize in fundamental AI research.
-        // We adapt existing base models using fine-tuning, prompt design, and system integration to meet project requirements.
-        'Applied AI',
+        {
+          name: "Feasibility",
+          lede: "When building something that has never been built before, a critical early objective is to establish that a product meeting its requirements can be delivered within the available time and budget.",
+          body: [
+            "Many challenges have multiple possible approaches, making the engineering effort, schedule, and cost of reaching a proof of concept difficult to estimate accurately.",
+            "We frequently work on projects with uncertain feasibility.",
+            "Our approach integrates feasibility activities into the overall project plan, resequencing work to retire the highest risks as early as practical.",
+          ],
+        },
+        {
+          name: "Software architecture",
+          lede: "Software architecture is critical to both efficient delivery and long-term maintainability.",
+          body: [
+            "We work with project managers and senior developers to define architectures and engineering processes",
+            "that reduce technical risk while balancing initial investment against long-term maintainability.",
+          ],
+        },
+        {
+          name: "Protocol design",
+          lede: "Wherever software systems communicate, protocols are needed.",
+          body: [
+            "Whether in inter-process communication, distributed systems, client-server architectures, federation, or peer-to-peer networks, the fundamental design considerations remain largely the same.",
+            "Good protocols balance security, efficiency, simplicity, and long-term interoperability.",
+            "We have extensive protocol design experience, beginning with the open-source peer-to-peer routing protocol that is our namesake.",
+          ],
+        },
+        {
+          name: "Information security",
+          lede: "Information security is often burdened by superstition, folklore, and checkbox-driven thinking. In reality, effective security is simply another application of rigorous risk analysis.",
+          body: [
+            "The appropriate risk model for most information security analyses is similar to that of physical security. It considers threat actor profiles, attacker capabilities and resources, attacker incentives, potential impact on the defender, and the relevant attack surface.",
+            "AI has recently begun providing powerful new analysis tools to attackers and defenders alike. But even this rapidly evolving ecosystem can still be modeled and reasoned about.",
+          ],
+        },
+        {
+          name: "Technical due diligence",
+          lede: "It's not enough to know what an asset is today.",
+          body: [
+            "You need to know how that asset performs across the range of credible future scenarios.",
+            "Just as your legal team identifies risks and obligations in contracts, we identify risks and opportunities in technology assets.",
+          ],
+        },
+        {
+          name: "Risk analysis",
+          lede: "Our clients are typically decision makers who already think in terms of risk and opportunity, so we often find these concepts provide a good common language between us.",
+          body: [
+            "For clients who want additional structure, we go further into practical decision modeling and probabilistic forecasts.",
+            "The level of formalization is always adapted to the goal. When helping decision makers become familiar with the landscape of credible outcomes, we don't present a formal model; instead, we draw a map.",
+          ],
+        },
+        {
+          name: "Open source ecosystems",
+          lede: "Open source ecosystem management is a special case of brand development. While we are not specialists in branding, we do have extensive experience in building and interfacing with open source ecosystems.",
+          body: [
+            "Even for companies which genuinely share open source values, good planning is still necessary to avoid being forced into business decisions that damage long-term credibility.",
+            "Companies which succeed in open source ecosystems are those that are able to reliably maintain transparency, candor, and predictable behavior.",
+            "Open source ecosystems are even tolerant of profit-focused companies, as long as they are able to set expectations and keep their word.",
+          ],
+        },
+        {
+          name: "Applied AI",
+          lede: "One of the fastest-growing opportunities for value creation today is the application of modern AI technologies.",
+          body: [
+            "We do not specialize in fundamental AI research.",
+            "We adapt existing base models using fine-tuning, prompt design, and system integration to meet project requirements.",
+          ],
+        },
       ],
+      exploreLabel: 'Areas of expertise',
+      prev: 'Previous',
+      next: 'Next',
       pitch: 'Book a confidential 15-minute call to discuss your objectives and whether we\'re the right fit.',
       book: 'Book a 15-minute call',
       orWrite: 'or write to',
@@ -207,8 +235,8 @@ const translations = {
     },
     meta: {
       home: {
-        title: 'CJDNS SASU — Conseil R&D & ingénierie de recherche',
-        desc: 'Société indépendante de conseil R&D en région parisienne, active en Normandie, présente à l’international. Réseaux, cryptographie, noyau Linux, IA appliquée — et partenariats de recherche FP7, Horizon 2020, Horizon Europe. R&D éligible au CIR.',
+        title: 'CJDNS SASU — Conseil & recherche',
+        desc: 'Conseil et recherche indépendants.',
       },
       legal: {
         title: 'Mentions légales — CJDNS SASU',
@@ -220,48 +248,105 @@ const translations = {
       },
     },
     hero: {
-      eyebrow: 'Conseil & partenariats de recherche — Paris · Normandie · International',
-      title: 'Ingénierie, recherche, et tout ce qu\'il y a entre les deux.',
-      lead: 'CJDNS est une société indépendante de R&D et de conseil. Les entreprises nous apportent leurs questions techniques ; les consortiums de recherche nous confient des projets à valider, intégrer et livrer. Dans les deux cas, vous parlez directement aux ingénieurs seniors qui font le travail.',
+      eyebrow: 'Conseil & partenariats de recherche',
+      title: 'La confiance par la compréhension.',
+      lead: 'CJDNS est une société indépendante de R&D et de conseil. Nous transformons l’incertitude technique en informations sur lesquelles fonder vos décisions.',
       ctaConsulting: 'Conseil',
-      ctaResearch: 'Partenariats de recherche',
-      badges: ['L’open source au cœur', 'FP7 · Horizon 2020 · Horizon Europe', 'R&D éligible au CIR'],
+      ctaResearch: 'Recherche sur fonds publics',
+      badges: ['FP7', 'Horizon 2020', 'Horizon Europe', 'R&D éligible au CIR'],
     },
     consulting: {
       eyebrow: 'Conseil',
-      title: 'Apportez-nous le problème.',
-      lead: 'Certains problèmes d’entreprise ont un cœur technique difficile. Nous donnons des conseils sur lesquels vous pouvez agir — ou construisons la solution nous-mêmes. Nos domaines de prédilection :',
+      title: 'Gagnez en clarté.',
+      lead: 'Notre activité de conseil met des décennies d’expérience industrielle à votre service, pour vous aider à naviguer dans les réalités subtiles que l’on ne trouve ni dans la documentation, ni dans les bonnes pratiques, ni dans les données d’entraînement des outils d’IA actuels. Nous connaissons la valeur du temps, et nous savons exposer des questions techniques complexes directement aux dirigeants, aux conseils d’administration, aux investisseurs et aux équipes d’ingénierie. Nous nous intégrons aux équipes de développement et aux chefs de projet pour orienter l’architecture et réduire les risques autour des jalons du chemin critique.',
       areas: [
-        'Réseaux',
-        'Cryptographie',
-        'Sécurité informatique',
-        'Écosystèmes open source',
-        'Preuve de travail & cryptomonnaies',
-        'Smart contracts',
-        'Développement du noyau Linux',
-        'IA appliquée',
+        {
+          name: 'Faisabilité',
+          lede: 'Lorsqu’on construit quelque chose qui n’a jamais été construit, un objectif essentiel, dès le départ, est d’établir qu’un produit répondant aux exigences peut être livré dans les délais et le budget disponibles.',
+          body: [
+            'De nombreux défis admettent plusieurs approches possibles, ce qui rend difficile l’estimation précise de l’effort d’ingénierie, du calendrier et du coût nécessaires pour atteindre une preuve de concept.',
+            'Nous travaillons fréquemment sur des projets dont la faisabilité est incertaine.',
+            'Notre approche intègre les activités de faisabilité au plan global du projet, en réordonnant les travaux pour lever les risques les plus importants le plus tôt possible.',
+          ],
+        },
+        {
+          name: 'Architecture logicielle',
+          lede: 'L’architecture logicielle est déterminante, à la fois pour l’efficacité de la livraison et pour la maintenabilité à long terme.',
+          body: [
+            'Nous travaillons avec les chefs de projet et les développeurs seniors pour définir des architectures et des processus d’ingénierie qui réduisent le risque technique, tout en arbitrant entre l’investissement initial et la maintenabilité à long terme.',
+          ],
+        },
+        {
+          name: 'Conception de protocoles',
+          lede: 'Partout où des systèmes logiciels communiquent, il faut des protocoles.',
+          body: [
+            'Qu’il s’agisse de communication inter-processus, de systèmes distribués, d’architectures client-serveur, de fédération ou de réseaux pair-à-pair, les considérations fondamentales de conception restent largement les mêmes.',
+            'Un bon protocole équilibre sécurité, efficacité, simplicité et interopérabilité à long terme.',
+            'Nous avons une vaste expérience de la conception de protocoles, à commencer par le protocole de routage pair-à-pair open source dont nous portons le nom.',
+          ],
+        },
+        {
+          name: 'Sécurité informatique',
+          lede: 'La sécurité informatique est souvent encombrée de superstitions, de folklore et de raisonnements par cases à cocher. En réalité, une sécurité efficace n’est qu’une application parmi d’autres d’une analyse de risques rigoureuse.',
+          body: [
+            'Le modèle de risque adapté à la plupart des analyses de sécurité informatique est proche de celui de la sécurité physique. Il prend en compte les profils des acteurs de la menace, les capacités et les ressources des attaquants, leurs motivations, l’impact potentiel pour le défenseur et la surface d’attaque concernée.',
+            'L’IA a récemment commencé à offrir de nouveaux outils d’analyse puissants, aux attaquants comme aux défenseurs. Mais même cet écosystème en évolution rapide peut encore être modélisé et analysé avec rigueur.',
+          ],
+        },
+        {
+          name: 'Due diligence technique',
+          lede: 'Il ne suffit pas de savoir ce qu’est un actif aujourd’hui.',
+          body: [
+            'Vous devez savoir comment cet actif se comporte dans l’ensemble des scénarios futurs crédibles.',
+            'De la même manière que votre équipe juridique identifie les risques et les obligations dans les contrats, nous identifions les risques et les opportunités dans les actifs technologiques.',
+          ],
+        },
+        {
+          name: 'Analyse de risques',
+          lede: 'Nos clients sont généralement des décideurs qui raisonnent déjà en termes de risques et d’opportunités ; ces notions constituent souvent un bon langage commun entre nous.',
+          body: [
+            'Pour les clients qui souhaitent davantage de structure, nous allons plus loin, avec une modélisation pratique de la décision et des prévisions probabilistes.',
+            'Le niveau de formalisation est toujours adapté à l’objectif. Lorsqu’il s’agit d’aider des décideurs à se familiariser avec le paysage des issues crédibles, nous ne présentons pas de modèle formel : nous dessinons une carte.',
+          ],
+        },
+        {
+          name: 'Écosystèmes open source',
+          lede: 'La gestion d’un écosystème open source est un cas particulier du développement de marque. Sans être spécialistes de l’image de marque, nous avons une longue expérience de la construction d’écosystèmes open source et des relations avec eux.',
+          body: [
+            'Même pour les entreprises qui partagent sincèrement les valeurs de l’open source, une bonne planification reste nécessaire pour ne pas être contraintes à des décisions commerciales qui nuisent à leur crédibilité à long terme.',
+            'Les entreprises qui réussissent dans les écosystèmes open source sont celles qui savent faire preuve, de manière constante, de transparence, de franchise et d’un comportement prévisible.',
+            'Les écosystèmes open source tolèrent même les entreprises tournées vers le profit, pourvu qu’elles sachent fixer les attentes et tenir parole.',
+          ],
+        },
+        {
+          name: 'IA appliquée',
+          lede: 'L’une des sources de création de valeur qui croissent le plus vite aujourd’hui est l’application des technologies modernes d’IA.',
+          body: [
+            'Nous ne sommes pas spécialisés dans la recherche fondamentale en IA.',
+            'Nous adaptons des modèles de base existants par fine-tuning, conception de prompts et intégration système, afin de répondre aux exigences du projet.',
+          ],
+        },
       ],
-      pitch: 'Le premier échange dure quinze minutes et ne coûte rien. Apportez le problème — nous vous dirons honnêtement si nous sommes les bonnes personnes pour le résoudre.',
+      exploreLabel: 'Domaines d’expertise',
+      prev: 'Précédent',
+      next: 'Suivant',
+      pitch: 'Réservez un appel confidentiel de 15 minutes pour échanger sur vos objectifs et voir si nous sommes le bon partenaire.',
       book: 'Réserver un appel de 15 minutes',
       orWrite: 'ou écrivez à',
       bookMailSubject: 'Appel de présentation — 15 minutes',
     },
     research: {
-      eyebrow: 'Partenariats de recherche',
-      title: 'Nous faisons tenir ensemble les projets de recherche financés.',
+      eyebrow: 'Partenariats de recherche sur fonds publics',
+      title: 'Un partenaire de recherche qui parle théorie et pratique.',
       lead: 'Plus de dix ans d’expérience dans la gestion de projets de recherche financés par des fonds publics français et européens — FP7, Horizon 2020, Horizon Europe. Nous accompagnons les consortiums sur tout le cycle, de la demande de financement au livrable final.',
       items: [
         {
           name: 'Validation d’architecture & de faisabilité',
-          text: 'Un consortium de recherche assemble des spécialistes, et quelqu’un doit faire tenir les pièces ensemble. Avant le début des travaux, nous validons qu’une architecture proposée peut réellement être construite — sur le papier d’abord, pour que les surprises n’arrivent pas au dix-huitième mois.',
+          text: 'Un consortium de recherche réunit des spécialistes de leur domaine, mais il est essentiel de s’assurer que les pièces s’assemblent. Avant le début des travaux, nous conseillons sur l’architecture, la faisabilité de l’exploitation et les risques, pour que le projet parte sur de bonnes bases.',
         },
         {
           name: 'Intégration des composants livrables',
-          text: 'Pendant le projet, nous construisons le liant : la couche d’intégration qui transforme des composants développés par des équipes spécialistes distinctes en un système unique, fonctionnel et démontrable.',
-        },
-        {
-          name: 'Accompagnement des demandes de financement',
-          text: 'Du cadrage d’un programme de travail finançable à la rédaction de la demande elle-même — nous pratiquons les dispositifs de financement français et européens depuis dix ans, côté praticien.',
+          text: 'Pendant le projet, nous apportons une expertise spécifique de l’intégration des résultats et du passage de la recherche à l’industrie : nous avons l’expérience des démonstrateurs, preuves de concept, MVP, produits logiciels et projets open source.',
         },
       ],
       selectedTitle: 'Projets sélectionnés',
@@ -281,7 +366,7 @@ const translations = {
           linkLabel: 'Wiki du projet',
         },
       ],
-      pitch: 'Vous préparez une proposition, ou portez un work package qui demande des mains seniors pour l’intégration ? Quinze minutes suffisent pour savoir si nous sommes le bon partenaire.',
+      pitch: 'Vous cherchez un partenaire doté d’une expertise en intégration, en industrialisation et en livraison ? Écrivez-nous au sujet de votre projet.',
     },
     credentials: {
       eyebrow: 'Agréments R&D',
@@ -304,14 +389,14 @@ const translations = {
     contact: {
       eyebrow: 'Contact',
       title: 'Écrivez-nous.',
-      text: 'Une adresse, lue directement par des ingénieurs — sans système de tickets, sans salle d’attente. Un projet dont vous voulez discuter, une proposition qui prend forme, ou simplement une question sur laquelle vous aimeriez un avis honnête : écrivez-nous. Nous répondons à chaque message sérieux, en français ou en anglais.',
+      text: 'Exposez-nous le problème, nous nous occupons du reste.',
       copy: 'Copier l’adresse',
       copied: 'Copié ✓',
-      preferCall: 'Vous préférez en parler ? Réservez un appel de 15 minutes →',
+      preferCall: 'Prêt à lancer votre mission de conseil ? Réservez un appel confidentiel de 15 minutes →',
       email: 'hello@cjdns.fr',
     },
     footer: {
-      legal: 'CJDNS SASU — Ingénierie logicielle R&D & conseil',
+      legal: 'CJDNS SASU — Conseil et recherche',
       rights: 'SIREN 843 264 235 — Société immatriculée en France.',
       legalLink: 'Mentions légales & confidentialité',
       noTracking: 'Privé par conception — ce site fonctionne sans cookies ni traceurs.',
