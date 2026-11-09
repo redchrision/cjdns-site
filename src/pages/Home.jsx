@@ -4,25 +4,23 @@ import MeshCanvas from '../components/MeshCanvas.jsx';
 import NodeMotif from '../components/NodeMotif.jsx';
 import AreaExplorer from '../components/AreaExplorer.jsx';
 import useMeta from '../useMeta.js';
-import { BOOKING_URL, LEDGER_URL, ECONET_WIKI_URL } from '../config.js';
+import { LEDGER_URL, ECONET_WIKI_URL } from '../config.js';
 
 const PROJECT_LINKS = { ledger: LEDGER_URL, econet: ECONET_WIKI_URL };
 
-function BookCallButton({ className = 'btn btn-primary' }) {
+function EmailButton({ label, subject, className = 'btn btn-primary' }) {
   const { t } = useLang();
-  const href = BOOKING_URL
-    ? BOOKING_URL
-    : `mailto:${t.contact.email}?subject=${encodeURIComponent(t.consulting.bookMailSubject)}`;
-  const external = Boolean(BOOKING_URL);
+  const href = `mailto:${t.contact.email}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}`;
   return (
-    <a
-      className={className}
-      href={href}
-      {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
-    >
-      {t.consulting.book}
+    <a className={className} href={href}>
+      {label}
     </a>
   );
+}
+
+function EmailAlt() {
+  const { t } = useLang();
+  return <a href={`mailto:${t.contact.email}`}>{t.contact.email}</a>;
 }
 
 function CtaBand({ dark = false, text, action, alt }) {
@@ -91,12 +89,8 @@ function Consulting() {
         />
         <CtaBand
           text={c.pitch}
-          action={<BookCallButton />}
-          alt={
-            <>
-              {c.orWrite} <a href={`mailto:${t.contact.email}`}>{t.contact.email}</a>
-            </>
-          }
+          action={<EmailButton label={c.emailCta} subject={c.mailSubject} />}
+          alt={<EmailAlt />}
         />
       </div>
     </section>
@@ -106,10 +100,6 @@ function Consulting() {
 function Research() {
   const { t } = useLang();
   const r = t.research;
-  const callHref =
-    BOOKING_URL ||
-    `mailto:${t.contact.email}?subject=${encodeURIComponent(t.consulting.bookMailSubject)}`;
-  const callProps = BOOKING_URL ? { target: '_blank', rel: 'noreferrer' } : {};
   return (
     <section className="section section-dark section-pitch" id="research">
       <div className="section-inner">
@@ -155,19 +145,8 @@ function Research() {
         <CtaBand
           dark
           text={r.pitch}
-          action={
-            <a
-              className="btn btn-primary"
-              href={`mailto:${t.contact.email}?subject=${encodeURIComponent(r.mailSubject)}`}
-            >
-              {r.emailCta}
-            </a>
-          }
-          alt={
-            <a href={callHref} {...callProps}>
-              {r.orBook}
-            </a>
-          }
+          action={<EmailButton label={r.emailCta} subject={r.mailSubject} />}
+          alt={<EmailAlt />}
         />
       </div>
     </section>
@@ -199,10 +178,6 @@ function Contact() {
   const { t } = useLang();
   const [copied, setCopied] = useState(false);
 
-  const callHref =
-    BOOKING_URL ||
-    `mailto:${t.contact.email}?subject=${encodeURIComponent(t.consulting.bookMailSubject)}`;
-  const callProps = BOOKING_URL ? { target: '_blank', rel: 'noreferrer' } : {};
 
   return (
     <section className="section section-contact section-motif" id="contact">
@@ -227,12 +202,6 @@ function Contact() {
           >
             {copied ? t.contact.copied : t.contact.copy}
           </button>
-        </div>
-        <div className="contact-call">
-          <span className="contact-call-prompt">{t.contact.callPrompt}</span>
-          <a className="btn btn-ghost" href={callHref} {...callProps}>
-            {t.consulting.book}
-          </a>
         </div>
         <p className="contact-location">{t.contact.location}</p>
       </div>

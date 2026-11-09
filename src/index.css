@@ -183,6 +183,25 @@ a {
   color: var(--route);
 }
 
+.nav-links {
+  align-items: center;
+}
+
+.nav-links a.nav-cta {
+  opacity: 1;
+  color: var(--ink);
+  background: var(--route);
+  font-weight: 600;
+  padding: 0.42rem 1rem;
+  border-radius: 999px;
+  transition: background 0.15s ease;
+}
+
+.nav-links a.nav-cta:hover {
+  color: var(--ink);
+  background: #74d6c8;
+}
+
 .lang-toggle {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -436,6 +455,12 @@ a {
   margin-right: auto;
 }
 
+.section-contact .section-lead {
+  color: var(--chalk);
+  opacity: 0.88;
+  font-size: 1.08rem;
+}
+
 .contact-location {
   margin-top: 2rem;
   font-family: var(--font-mono);
@@ -503,6 +528,15 @@ a {
   }
   .nav-links.open a:last-child {
     border-bottom: none;
+  }
+  .nav-links {
+    align-items: stretch;
+  }
+  .nav-links.open a.nav-cta {
+    margin-top: 0.6rem;
+    text-align: center;
+    border-bottom: none;
+    border-radius: var(--radius);
   }
 }
 
@@ -1078,19 +1112,6 @@ a {
   .value-points { grid-template-columns: 1fr; gap: 1.6rem; margin-bottom: 2.6rem; }
   .ax-desktop { display: none; }
   .ax-mobile { display: block; }
-}
-
-.contact-call {
-  margin-top: 2.2rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem 1.2rem;
-}
-
-.contact-call-prompt {
-  color: var(--slate-dark);
 }
 
 /* ---- call-to-action band (end of Consulting / Research) ---- */

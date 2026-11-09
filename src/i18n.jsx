@@ -121,10 +121,9 @@ const translations = {
       exploreLabel: 'Areas of expertise',
       prev: 'Previous',
       next: 'Next',
-      pitch: 'Book a confidential 15-minute call to discuss your objectives and whether we\'re the right fit.',
-      book: 'Book a 15-minute call',
-      orWrite: 'or write to',
-      bookMailSubject: '15-minute introductory call',
+      pitch: 'Write to us in confidence to discuss your objectives and whether we\'re the right fit.',
+      emailCta: 'Email us',
+      mailSubject: 'Consulting enquiry',
     },
     research: {
       eyebrow: 'Publicly funded research partnerships',
@@ -159,7 +158,6 @@ const translations = {
       ],
       pitch: 'If you\'re looking for the partner with integration, industrialization, and delivery expertise, send us an email about your project.',
       emailCta: 'Email us about your project',
-      orBook: 'or book a 15-minute call',
       mailSubject: 'Research partnership',
     },
     credentials: {
@@ -187,7 +185,6 @@ const translations = {
       copy: 'Copy address',
       copied: 'Copied ✓',
       email: 'hello@cjdns.fr',
-      callPrompt: 'Ready to launch your consulting mission?',
     },
     footer: {
       legal: 'CJDNS SASU — Consulting and research',
@@ -356,10 +353,9 @@ const translations = {
       exploreLabel: 'Domaines d’expertise',
       prev: 'Précédent',
       next: 'Suivant',
-      pitch: 'Réservez un appel confidentiel de 15 minutes pour échanger sur vos objectifs et voir si nous sommes le bon partenaire.',
-      book: 'Réserver un appel de 15 minutes',
-      orWrite: 'ou écrivez à',
-      bookMailSubject: 'Appel de présentation — 15 minutes',
+      pitch: 'Écrivez-nous en toute confidentialité pour échanger sur vos objectifs et voir si nous sommes le bon partenaire.',
+      emailCta: 'Envoyez-nous un e-mail',
+      mailSubject: 'Demande de conseil',
     },
     research: {
       eyebrow: 'Partenariats de recherche sur fonds publics',
@@ -394,7 +390,6 @@ const translations = {
       ],
       pitch: 'Vous cherchez un partenaire doté d’une expertise en intégration, en industrialisation et en livraison ? Écrivez-nous au sujet de votre projet.',
       emailCta: 'Écrivez-nous au sujet de votre projet',
-      orBook: 'ou réservez un appel de 15 minutes',
       mailSubject: 'Partenariat de recherche',
     },
     credentials: {
@@ -421,7 +416,6 @@ const translations = {
       text: 'Exposez-nous le problème, nous nous occupons du reste.',
       copy: 'Copier l’adresse',
       copied: 'Copié ✓',
-      callPrompt: 'Prêt à lancer votre mission de conseil ?',
       email: 'hello@cjdns.fr',
     },
     footer: {

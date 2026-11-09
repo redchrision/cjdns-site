@@ -85,7 +85,9 @@ function Nav() {
         <Link to="/#consulting">{t.nav.consulting}</Link>
         <Link to="/#research">{t.nav.research}</Link>
         <Link to="/#credentials">{t.nav.credentials}</Link>
-        <Link to="/#contact">{t.nav.contact}</Link>
+        <Link className="nav-cta" to="/#contact">
+          {t.nav.contact}
+        </Link>
       </nav>
       <button
         className="lang-toggle"
